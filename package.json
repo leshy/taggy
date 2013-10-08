@@ -1,0 +1,14 @@
+{
+  "name": "taggy",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "backbone4000": "git://github.com/leshy/backbone4000.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "lesh@sysphere.org",
+  "license": "BSD-2-Clause"
+}
