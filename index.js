@@ -13,7 +13,7 @@
         return this.collection = collection;
       }
     },
-    query: function(tags_yes, tags_no, callback) {
+    query: function(tags_yes, tags_no, callback, callbackDone) {
       var posts, query;
       if (tags_yes == null) {
         tags_yes = [];
@@ -28,7 +28,6 @@
       if (tags_no.constructor !== Array) {
         tags_no = _.keys(tags_no);
       }
-      console.log("rendering tags: ", tags_yes, tags_no);
       _.map(tags_yes, function(tag) {
         var ret;
         ret = {};
@@ -54,12 +53,7 @@
         sort: {
           created: -1
         }
-      }, function(post) {
-        if (post) {
-          return posts.push(post);
-        }
-        return callback(posts);
-      });
+      }, callback, callbackDone);
     }
   });
 
